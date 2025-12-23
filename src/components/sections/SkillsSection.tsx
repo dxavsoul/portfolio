@@ -57,6 +57,16 @@ const SkillsSection = () => {
     'Cloud Migration',
     'Technical Program Management',
     'Business Analysis',
+    'Enterprise Architecture',
+    'Digital Transformation',
+    'System Integration',
+    'API Development & Management',
+    'DevOps & CI/CD Pipelines',
+    'Stakeholder Management',
+    'Cross-functional Collaboration',
+    'Data Analytics & BI',
+    'Database Administration',
+    'Agile Project Delivery',
   ];
   
   useEffect(() => {
