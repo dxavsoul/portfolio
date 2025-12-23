@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Mail, Download } from 'lucide-react';
 
 const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -90,6 +90,14 @@ const HeroSection = () => {
             className="px-8 py-4 rounded-lg border border-primary/50 text-primary font-semibold text-lg hover:bg-primary/10 transition-all"
           >
             View Projects
+          </a>
+          <a
+            href="/Milton_Xavier_Sarmiento_Resume.pdf"
+            download="Milton_Xavier_Sarmiento_Resume.pdf"
+            className="px-8 py-4 rounded-lg border border-accent/50 text-accent font-semibold text-lg hover:bg-accent/10 transition-all flex items-center gap-2"
+          >
+            <Download size={20} />
+            Download Resume
           </a>
         </div>
         
