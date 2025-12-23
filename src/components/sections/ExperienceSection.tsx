@@ -87,6 +87,11 @@ const ExperienceSection = () => {
   
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Set initial state to visible to ensure content shows
+      gsap.set('.exp-title', { opacity: 1, y: 0 });
+      gsap.set('.timeline-item', { opacity: 1, x: 0 });
+      gsap.set('.timeline-line', { opacity: 1, scaleY: 1 });
+      
       gsap.from('.exp-title', {
         y: 60,
         opacity: 0,

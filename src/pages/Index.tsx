@@ -42,7 +42,7 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Milton Xavier Sarmiento | Senior Software Architect</title>
+        <title>Milton Xavier Sarmiento Cornejo | Senior Software Architect</title>
         <meta 
           name="description" 
           content="20+ years of experience in systems design and development. Expert in cloud architecture, full-stack development, and technical leadership." 

@@ -77,6 +77,11 @@ const SkillsSection = () => {
   
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Set initial state to visible to ensure content shows
+      gsap.set('.skills-title', { opacity: 1, y: 0 });
+      gsap.set('.skill-category', { opacity: 1, y: 0 });
+      gsap.set('.expertise-pill', { opacity: 1, scale: 1 });
+      
       gsap.from('.skills-title', {
         y: 60,
         opacity: 0,
@@ -120,12 +125,11 @@ const SkillsSection = () => {
     <section
       id="skills"
       ref={sectionRef}
-      className="py-32 relative overflow-hidden"
-    >
+      className="py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/20 to-transparent" />
       
       <div className="section-container relative z-10 lg:pr-[35%]">
-        <h2 className="skills-title text-4xl md:text-5xl font-bold mb-16">
+        <h2 className="skills-title text-4xl md:text-5xl font-bold mb-16 text-foreground">
           Technical <span className="text-gradient">Arsenal</span>
         </h2>
         

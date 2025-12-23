@@ -30,6 +30,11 @@ const ContactSection = () => {
   
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Set initial state to visible to ensure content shows
+      gsap.set('.contact-title', { opacity: 1, y: 0 });
+      gsap.set('.contact-card', { opacity: 1, y: 0 });
+      gsap.set('.contact-form', { opacity: 1, x: 0 });
+      
       gsap.from('.contact-title', {
         y: 60,
         opacity: 0,

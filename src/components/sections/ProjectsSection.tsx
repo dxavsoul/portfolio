@@ -74,6 +74,10 @@ const ProjectsSection = () => {
   
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Set initial state to visible to ensure content shows
+      gsap.set('.projects-title', { opacity: 1, y: 0 });
+      gsap.set('.project-card', { opacity: 1, y: 0 });
+      
       gsap.from('.projects-title', {
         y: 60,
         opacity: 0,
@@ -108,7 +112,7 @@ const ProjectsSection = () => {
       className="py-32 relative overflow-hidden"
     >
       <div className="section-container lg:pr-[35%]">
-        <h2 className="projects-title text-4xl md:text-5xl font-bold mb-6">
+        <h2 className="projects-title text-4xl md:text-5xl font-bold mb-6 text-foreground">
           Featured <span className="text-gradient">Projects</span>
         </h2>
         

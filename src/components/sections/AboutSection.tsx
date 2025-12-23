@@ -11,6 +11,11 @@ const AboutSection = () => {
   
   useEffect(() => {
     const ctx = gsap.context(() => {
+
+      gsap.set('.about-title', { opacity: 1, y: 0 });
+      gsap.set('.about-text', { opacity: 1, y: 0 });
+      gsap.set('.stat-card', { opacity: 1, y: 0 });
+
       gsap.from('.about-title', {
         y: 60,
         opacity: 0,
