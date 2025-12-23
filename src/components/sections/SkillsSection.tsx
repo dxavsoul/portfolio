@@ -15,38 +15,44 @@ const SkillsSection = () => {
     {
       icon: Database,
       title: 'Databases',
-      skills: ['MSSQL', 'PostgreSQL', 'Firebase', 'MongoDB', 'MySQL', 'Oracle', 'CloudSQL'],
+      skills: ['MSSQL', 'PostgreSQL', 'Firebase', 'MongoDB', 'MySQL', 'Oracle', 'CloudSQL', 'SQL Server', 'NoSQL'],
       color: 'primary',
     },
     {
       icon: Code,
       title: 'Programming',
-      skills: ['Java', 'C#', 'TypeScript', 'Dart/Flutter', 'React', 'Spring Boot', 'Python', '.NET Core'],
+      skills: ['Java', 'C#', 'TypeScript', 'JavaScript', 'Dart/Flutter', 'React', 'Spring Boot', 'Python', '.NET Core', 'Node.js', 'HTML/CSS'],
       color: 'accent',
     },
     {
       icon: Cloud,
       title: 'Cloud & APIs',
-      skills: ['Azure', 'AWS', 'GCP', 'REST APIs', 'Microservices', 'RabbitMQ', 'Docker', 'Kubernetes'],
+      skills: ['Azure', 'AWS', 'GCP', 'REST APIs', 'SOAP', 'Microservices', 'RabbitMQ', 'API Gateway', 'Serverless'],
       color: 'primary',
+    },
+    {
+      icon: Server,
+      title: 'Infrastructure',
+      skills: ['Docker', 'Kubernetes', 'Terraform', 'Linux', 'Windows Server', 'Nginx', 'Load Balancing'],
+      color: 'accent',
     },
     {
       icon: Wrench,
       title: 'Tools & DevOps',
-      skills: ['GitHub CI/CD', 'Docker', 'JIRA', 'Confluence', 'Terraform', 'Postman'],
-      color: 'accent',
+      skills: ['GitHub CI/CD', 'Git', 'JIRA', 'Confluence', 'Postman', 'Jenkins', 'Azure DevOps', 'BitBucket'],
+      color: 'primary',
     },
     {
       icon: GitBranch,
       title: 'Methodologies',
-      skills: ['Agile/Scrum', 'SDLC', 'System Design', 'Technical Leadership', 'Code Review'],
-      color: 'primary',
+      skills: ['Agile/Scrum', 'SDLC', 'System Design', 'Technical Leadership', 'Code Review', 'TDD', 'Kanban'],
+      color: 'accent',
     },
     {
       icon: BarChart3,
       title: 'Reporting & BI',
-      skills: ['Power BI', 'SSRS', 'Pentaho', 'Odoo', 'Data Analytics'],
-      color: 'accent',
+      skills: ['Power BI', 'SSRS', 'Pentaho', 'Odoo', 'Data Analytics', 'ETL', 'Data Warehousing'],
+      color: 'primary',
     },
   ];
   
