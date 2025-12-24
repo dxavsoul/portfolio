@@ -41,8 +41,8 @@ const Navigation = ({ currentSection }: NavigationProps) => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a href="#hero" className="text-2xl font-bold text-gradient">
-          
+        <a href="#hero" className="flex items-center gap-2 text-2xl font-bold text-gradient">
+          <img src="/avatar-face.png" alt="Logo" className="w-10 h-10" />
           MXSC
         </a>
         
