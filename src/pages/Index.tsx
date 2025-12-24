@@ -42,13 +42,13 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Milton Xavier Sarmiento Cornejo | Senior Software Architect</title>
+        <title>Milton X Sarmiento | Senior Software Architect</title>
         <meta 
           name="description" 
           content="20+ years of experience in systems design and development. Expert in cloud architecture, full-stack development, and technical leadership." 
         />
-        <meta name="keywords" content="Software Architect, Full Stack Developer, React, Flutter, Cloud Architecture, New York" />
-        <meta property="og:title" content="Milton Xavier Sarmiento | Senior Software Architect" />
+        <meta name="keywords" content="Software Architect, Full Stack Developer, Java, C#, React, Flutter, Cloud Architecture, New York" />
+        <meta property="og:title" content="Milton Xavier Sarmiento | Senior AI Software Architect" />
         <meta property="og:description" content="20+ years of experience crafting scalable systems and leading global teams." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://mxsarmiento.brainsolutions.nyc" />

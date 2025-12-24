@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
             <a href="#hero" className="text-2xl font-bold text-gradient">
-              MXS
+              MXSC
             </a>
             <p className="text-sm text-muted-foreground mt-2">
               Senior Software Architect
