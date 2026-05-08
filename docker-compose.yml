@@ -9,10 +9,8 @@ services:
     restart: unless-stopped
     networks:
       - traefik_network
-    ports:
+    expose:
       - "80"
-    environment:
-      - NODE_ENV=production
     # healthcheck:
     #   test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
     #   interval: 30s
