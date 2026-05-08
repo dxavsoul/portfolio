@@ -22,9 +22,9 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik_network"
-      - "traefik.http.routers.club-connect.rule=Host(`${DOMAIN}`)"
-      - "traefik.http.routers.club-connect.entrypoints=web"
-      - "traefik.http.services.club-connect.loadbalancer.server.port=80"
+      - "traefik.http.routers.journey-portfolio.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.journey-portfolio.entrypoints=web"
+      - "traefik.http.services.journey-portfolio.loadbalancer.server.port=80"
 
 networks:
   traefik_network:
