@@ -167,11 +167,11 @@ const ExperienceSection = () => {
                       </h3>
                       <div className="flex flex-wrap items-center gap-4 mt-2 text-sm text-muted-foreground">
                         <span className="flex items-center gap-1">
-                          <Building2 size={14} className="text-primary" />
+                          <Building2 size={14} className="text-primary" aria-hidden="true" />
                           {exp.company}
                         </span>
                         <span className="flex items-center gap-1">
-                          <MapPin size={14} className="text-accent" />
+                          <MapPin size={14} className="text-accent" aria-hidden="true" />
                           {exp.location}
                         </span>
                       </div>
@@ -181,7 +181,7 @@ const ExperienceSection = () => {
                         ? 'bg-primary/20 text-primary' 
                         : 'bg-accent/20 text-accent'
                     }`}>
-                      <Calendar size={14} className="inline mr-1" />
+                      <Calendar size={14} className="inline mr-1" aria-hidden="true" />
                       {exp.period}
                     </div>
                   </div>
@@ -192,7 +192,7 @@ const ExperienceSection = () => {
                         key={hIndex}
                         className="flex items-start gap-2 text-muted-foreground"
                       >
-                        <ArrowUpRight size={16} className="mt-1 text-primary flex-shrink-0" />
+                        <ArrowUpRight size={16} className="mt-1 text-primary flex-shrink-0" aria-hidden="true" />
                         <span>{highlight}</span>
                       </li>
                     ))}

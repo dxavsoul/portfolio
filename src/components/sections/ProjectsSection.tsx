@@ -133,7 +133,7 @@ const ProjectsSection = () => {
                     ? 'bg-primary/20 text-primary' 
                     : 'bg-accent/20 text-accent'
                 }`}>
-                  <project.icon size={28} />
+                  <project.icon size={28} aria-hidden="true" />
                 </div>
               </div>
               
@@ -178,9 +178,9 @@ const ProjectsSection = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary/50 text-primary font-medium hover:bg-primary/10 transition-all"
           >
-            <Github size={20} />
+            <Github size={20} aria-hidden="true" />
             View More on GitHub
-            <ExternalLink size={16} />
+            <ExternalLink size={16} aria-hidden="true" />
           </a>
         </div>
       </div>

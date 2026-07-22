@@ -1,0 +1,45 @@
+# Milton X Sarmiento - Portfolio
+
+## About
+Senior Software Architect with 20+ years of experience building scalable systems, leading engineering teams, and transforming complex business challenges into elegant solutions.
+
+## Skills
+- **Languages**: Java, C#, Python, TypeScript, Go, Rust
+- **Frontend**: React, Vue.js, Flutter, React Native
+- **Backend**: .NET, Spring Boot, Node.js, Django
+- **Cloud**: AWS, Azure, Google Cloud Platform
+- **DevOps**: Docker, Kubernetes, CI/CD pipelines, Infrastructure as Code
+- **Databases**: PostgreSQL, MongoDB, DynamoDB, Redis
+
+## Experience
+- Senior Software Architect: 15+ years
+- Technical Leadership: 10+ years
+- Full-stack Development: 20+ years
+- Cloud Infrastructure: 8+ years
+
+## Projects
+Visit https://mxsarmiento.brainsolutions.nyc/projects for detailed project portfolio including:
+- Enterprise scalable systems
+- Cloud-native applications
+- Mobile applications
+- Real-time systems
+
+## Contact
+- Email: mxsarmiento@live.com
+- GitHub: https://github.com/dxavsoul
+- LinkedIn: https://linkedin.com/in/mxsarmiento
+- Website: https://mxsarmiento.brainsolutions.nyc
+
+## Accessibility
+This portfolio is designed with accessibility in mind:
+- Semantic HTML structure
+- WCAG 2.1 Level AA compliance
+- Keyboard navigation support
+- Screen reader optimization
+- High contrast design options
+
+## Performance
+- Core Web Vitals optimized
+- Lazy loading for heavy components
+- Code splitting for faster loads
+- Responsive design for all devices

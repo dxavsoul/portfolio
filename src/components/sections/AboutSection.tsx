@@ -107,7 +107,8 @@ const AboutSection = () => {
               <stat.icon 
                 className={`w-8 h-8 mx-auto mb-3 ${
                   stat.color === 'primary' ? 'text-primary' : 'text-accent'
-                }`} 
+                }`}
+                aria-hidden="true"
               />
               <div className={`text-3xl md:text-4xl font-bold mb-1 ${
                 stat.color === 'primary' ? 'text-primary' : 'text-accent'

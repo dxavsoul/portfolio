@@ -69,12 +69,12 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+          from: { height: "0", opacity: "0" },
+          to: { height: "var(--radix-accordion-content-height)", opacity: "1" },
         },
         "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+          from: { height: "var(--radix-accordion-content-height)", opacity: "1" },
+          to: { height: "0", opacity: "0" },
         },
         "fade-in": {
           "0%": { opacity: "0", transform: "translateY(20px)" },
@@ -97,15 +97,15 @@ export default {
           "50%": { transform: "translateY(-20px)" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--primary) / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(var(--primary) / 0.6)" },
+          "0%, 100%": { opacity: "0.5" },
+          "50%": { opacity: "1" },
         },
         "typing": {
-          "from": { width: "0" },
-          "to": { width: "100%" },
+          "from": { opacity: "0", transform: "translateX(-10px)" },
+          "to": { opacity: "1", transform: "translateX(0)" },
         },
         "blink": {
-          "50%": { borderColor: "transparent" },
+          "50%": { opacity: "0.5" },
         },
       },
       animation: {

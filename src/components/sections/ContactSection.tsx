@@ -119,7 +119,7 @@ const ContactSection = () => {
                 }`}
               >
                 <div className="p-3 rounded-lg bg-primary/20 text-primary">
-                  <item.icon size={24} />
+                  <item.icon size={24} aria-hidden="true" />
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">{item.label}</div>
@@ -129,7 +129,7 @@ const ContactSection = () => {
             ))}
             
             {/* Social Links */}
-            <div className="flex gap-4 pt-4">
+            <div className="flex gap-4 pt-4" role="list">
               {socialLinks.map((link, index) => (
                 <a
                   key={index}
@@ -137,9 +137,10 @@ const ContactSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-card p-4 rounded-xl glass-card border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-all hover-lift"
-                  title={link.label}
+                  aria-label={link.label}
+                  role="listitem"
                 >
-                  <link.icon size={24} />
+                  <link.icon size={24} aria-hidden="true" />
                 </a>
               ))}
             </div>
@@ -188,7 +189,7 @@ const ContactSection = () => {
               className="w-full px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold text-lg hover-lift glow-primary transition-all flex items-center justify-center gap-2"
             >
               Send Message
-              <Send size={20} />
+              <Send size={20} aria-hidden="true" />
             </button>
           </form>
         </div>

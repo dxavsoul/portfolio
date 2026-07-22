@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ChevronDown, Github, Linkedin, Mail, Download } from 'lucide-react';
 
@@ -7,8 +7,25 @@ const HeroSection = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+  
+  // Defer animation until after initial paint
+  useEffect(() => {
+    // Use requestIdleCallback for better performance, with fallback to setTimeout
+    const scheduleAnimation = () => {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => setShouldAnimate(true));
+      } else {
+        setTimeout(() => setShouldAnimate(true), 100);
+      }
+    };
+    
+    scheduleAnimation();
+  }, []);
   
   useEffect(() => {
+    if (!shouldAnimate) return;
+    
     const ctx = gsap.context(() => {
       // Set initial opacity to ensure content is always visible
       gsap.set([titleRef.current, subtitleRef.current, ctaRef.current], { 
@@ -35,7 +52,7 @@ const HeroSection = () => {
     }, containerRef);
     
     return () => ctx.revert();
-  }, []);
+  }, [shouldAnimate]);
   
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
@@ -48,11 +65,11 @@ const HeroSection = () => {
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
       {/* Background Grid */}
-      <div className="absolute inset-0 cyber-grid opacity-30" />
+      <div className="absolute inset-0 cyber-grid opacity-30" aria-hidden="true" />
       
       {/* Gradient Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '-3s' }} />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" aria-hidden="true" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '-3s' }} aria-hidden="true" />
       
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10 lg:mr-[33%]">
         <div className="mb-3 inline-block">
@@ -102,28 +119,34 @@ const HeroSection = () => {
         </div>
         
         {/* Social Links */}
-        <div className="flex items-center justify-center gap-6">
+        <div className="flex items-center justify-center gap-6" role="list">
           <a
             href="https://github.com/dxavsoul"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-lg border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-all"
+            aria-label="Visit GitHub profile"
+            role="listitem"
           >
-            <Github size={24} />
+            <Github size={24} aria-hidden="true" />
           </a>
           <a
             href="https://linkedin.com/in/mxsarmiento"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-lg border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-all"
+            aria-label="Visit LinkedIn profile"
+            role="listitem"
           >
-            <Linkedin size={24} />
+            <Linkedin size={24} aria-hidden="true" />
           </a>
           <a
             href="mailto:mxsarmiento@live.com"
             className="p-3 rounded-lg border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-all"
+            aria-label="Send email"
+            role="listitem"
           >
-            <Mail size={24} />
+            <Mail size={24} aria-hidden="true" />
           </a>
         </div>
       </div>
@@ -132,8 +155,9 @@ const HeroSection = () => {
       <button
         onClick={scrollToAbout}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors animate-bounce"
+        aria-label="Scroll to about section"
       >
-        <ChevronDown size={32} />
+        <ChevronDown size={32} aria-hidden="true" />
       </button>
     </section>
   );

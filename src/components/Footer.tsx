@@ -16,28 +16,34 @@ const Footer = () => {
             </p>
           </div>
           
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6" role="list">
             <a
               href="https://github.com/dxavsoul"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label="Visit GitHub profile"
+              role="listitem"
             >
-              <Github size={20} />
+              <Github size={20} aria-hidden="true" />
             </a>
             <a
               href="https://linkedin.com/in/mxsarmiento"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label="Visit LinkedIn profile"
+              role="listitem"
             >
-              <Linkedin size={20} />
+              <Linkedin size={20} aria-hidden="true" />
             </a>
             <a
               href="mailto:mxsarmiento@live.com"
               className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label="Send email"
+              role="listitem"
             >
-              <Mail size={20} />
+              <Mail size={20} aria-hidden="true" />
             </a>
           </div>
           

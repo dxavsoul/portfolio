@@ -146,7 +146,7 @@ const SkillsSection = () => {
                     ? 'bg-primary/20 text-primary' 
                     : 'bg-accent/20 text-accent'
                 }`}>
-                  <category.icon size={24} />
+                  <category.icon size={24} aria-hidden="true" />
                 </div>
                 <h3 className="text-xl font-bold">{category.title}</h3>
               </div>

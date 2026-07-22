@@ -238,7 +238,7 @@ interface HumanGuideProps {
 
 const HumanGuide = ({ scrollProgress, currentSection }: HumanGuideProps) => {
   return (
-    <div className="fixed right-0 top-0 w-1/3 h-screen pointer-events-none z-10 hidden lg:block">
+    <div className="fixed right-0 top-0 w-1/3 h-screen pointer-events-none z-10 hidden lg:block" aria-hidden="true">
       <Canvas
         camera={{ position: [0, 0, 4], fov: 50 }}
         gl={{ antialias: true, alpha: true }}

@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
+import { OptimizedImage } from './OptimizedImage';
 
 interface NavigationProps {
   currentSection: string;
@@ -8,6 +9,7 @@ interface NavigationProps {
 const Navigation = ({ currentSection }: NavigationProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const throttleTimerRef = useRef<NodeJS.Timeout | null>(null);
   
   const navItems = [
     { id: 'hero', label: 'Home' },
@@ -20,10 +22,20 @@ const Navigation = ({ currentSection }: NavigationProps) => {
   
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      // Throttle scroll updates
+      if (throttleTimerRef.current) return;
+      
+      throttleTimerRef.current = setTimeout(() => {
+        setIsScrolled(window.scrollY > 50);
+        throttleTimerRef.current = null;
+      }, 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (throttleTimerRef.current) clearTimeout(throttleTimerRef.current);
+    };
   }, []);
   
   const scrollToSection = (id: string) => {
@@ -42,12 +54,19 @@ const Navigation = ({ currentSection }: NavigationProps) => {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#hero" className="flex items-center gap-2 text-2xl font-bold text-gradient">
-          <img src="/avatar-face.png" alt="Logo" className="w-10 h-10" />
+          <OptimizedImage
+            src="/avatar-face.png"
+            alt="Logo"
+            className="w-10 h-10 rounded-full"
+            width={40}
+            height={40}
+            priority={true}
+          />
           MXSC
         </a>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-1" role="navigation" aria-label="Main navigation">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -57,6 +76,7 @@ const Navigation = ({ currentSection }: NavigationProps) => {
                   ? 'bg-primary/20 text-primary'
                   : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
               }`}
+              aria-current={currentSection === item.id ? 'page' : undefined}
             >
               {item.label}
             </button>
@@ -67,6 +87,9 @@ const Navigation = ({ currentSection }: NavigationProps) => {
         <button
           className="md:hidden p-2 text-foreground"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -74,7 +97,7 @@ const Navigation = ({ currentSection }: NavigationProps) => {
       
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 glass-card border-t border-border/50">
+        <div className="md:hidden absolute top-full left-0 right-0 glass-card border-t border-border/50" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
           <div className="p-4 flex flex-col gap-2">
             {navItems.map((item) => (
               <button
